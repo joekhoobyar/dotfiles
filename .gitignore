@@ -1,3 +1,4 @@
 /Brewfile
 .idea
-.DSFiles
+.DS_Files
+.DS_Store
