@@ -8,7 +8,7 @@ set -e
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 # Making directories for initialization files.
-printf "\n> dotfiles mkdirs\n"
+printf "\n> dotfiles dirs\n"
 (cd "$DOTFILES_REPO" &&
     find files -type d -mindepth 1 | sed -e s@^files/@@g | while read subdir
     do
@@ -17,7 +17,7 @@ printf "\n> dotfiles mkdirs\n"
     done)
 
 # Symlinking initialization files.
-printf "\n> dotfiles mkdirs\n"
+printf "\n> dotfiles symlinks\n"
 (cd "$DOTFILES_REPO" &&
     find files -type f | sed -e s@^files/@@g | while read item
     do
