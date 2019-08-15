@@ -24,7 +24,8 @@ unset pre_path
 # Other initialization
 export EDITOR=/usr/bin/vim
 alias be='bundle exec'
-alias ll='ls -l'
+alias ls='gls --color=auto'
+alias ll='gls --color=auto -l'
 alias vi=vim
 
 eval "$(direnv hook bash)"
