@@ -23,6 +23,7 @@ unset pre_path
 
 # Other initialization
 export EDITOR=/usr/bin/vim
+export ANSIBLE_INVENTORY='inventory,ansible/inventory,/usr/local/etc/ansible/hosts'
 alias be='bundle exec'
 alias ls='gls --color=auto'
 alias ll='gls --color=auto -l'
@@ -35,5 +36,7 @@ for p in ~/.bash/*.sh; do
 done
 [ -r ~/.localrc ] && source ~/.localrc
 
-alias kctx='kubects'
-alias kns='kubens'
+alias k='kubectl'
+alias kn='kubens'
+eval "$(direnv hook bash)"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

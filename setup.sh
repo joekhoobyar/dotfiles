@@ -25,8 +25,8 @@ printf "\n> dotfiles symlinks\n"
         then
             echo exists ~/"$item"
         else
-            echo ln -nsf "$DOTFILES_REPO"/"$item" ~/"$item"
-            ln -nsf "$DOTFILES_REPO"/"$item" ~/"$item"
+            echo ln -nsf "$DOTFILES_REPO"/files/"$item" ~/"$item"
+            ln -nsf "$DOTFILES_REPO"/files/"$item" ~/"$item"
         fi
     done)
 

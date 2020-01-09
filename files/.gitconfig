@@ -1,0 +1,6 @@
+[user]
+	name = Joe Khoobyar
+    email = fourheads@gmail.com
+
+[core]
+    excludesfile = ~/.gitignore
