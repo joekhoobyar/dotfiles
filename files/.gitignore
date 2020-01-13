@@ -1,7 +1,13 @@
+# Environment specific files
+.envrc
+
+# Editor / IDE specific files
 .idea/*
 .project
 .buildpath
 .settings/*
 *~
 **/*~
+
+# Build system specific files
 target/*
