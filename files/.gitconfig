@@ -6,3 +6,10 @@
     excludesfile = ~/.gitignore
 [alias]
 	contributors = shortlog --summary --numbered
+	a = add
+	co = checkout
+    br = branch
+    ci = commit
+    st = status
+    l = log
+    l1 = log -n 1
