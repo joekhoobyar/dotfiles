@@ -36,6 +36,7 @@ for p in ~/.bash/*.sh; do
 done
 [ -r ~/.localrc ] && source ~/.localrc
 
+alias g='git'
 alias k='kubectl'
 alias kn='kubens'
 eval "$(direnv hook bash)"
