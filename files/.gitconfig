@@ -13,3 +13,10 @@
     st = status
     l = log
     l1 = log -n 1
+    copr = "!f() { \
+      declare PR=\"$1\"; \
+      [ -z \"$PR\" ] && echo 'usage: git copr PR' 1>&2 && return 1 ; \
+      git fetch --all > /dev/null && \
+      git fetch rean pull/$PR/head:pr-$PR && \
+      git checkout pr-$PR; \
+  }; f"
