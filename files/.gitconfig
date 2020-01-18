@@ -13,6 +13,10 @@
     st = status
     l = log
     l1 = log -n 1
+    cip = "!f() { \
+      git commit \"$@\" && \
+      git push ; \
+    }; f"
     copr = "!f() { \
       declare PR=\"$1\"; \
       [ -z \"$PR\" ] && echo 'usage: git copr PR' 1>&2 && return 1 ; \
