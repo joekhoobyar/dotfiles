@@ -11,6 +11,8 @@
     br = branch
     ci = commit
     st = status
+    pl = pull
+    pu = push
     l = log
     l1 = log -n 1
     cip = "!f() { \

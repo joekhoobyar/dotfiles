@@ -36,8 +36,10 @@ for p in ~/.bash/*.sh; do
 done
 [ -r ~/.localrc ] && source ~/.localrc
 
+alias rk='bundle exec rake'
 alias g='git'
 alias k='kubectl'
 alias kn='kubens'
+
 eval "$(direnv hook bash)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
