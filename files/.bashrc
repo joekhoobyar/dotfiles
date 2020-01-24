@@ -41,5 +41,10 @@ alias g='git'
 alias k='kubectl'
 alias kn='kubens'
 
+# Using krew
 eval "$(direnv hook bash)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Preferring OpenSSL
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
