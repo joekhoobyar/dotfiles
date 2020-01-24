@@ -1,3 +1,7 @@
+# OS specific annoyances
+.DS_Files
+.DS_Store
+
 # Environment specific files
 .envrc
 
