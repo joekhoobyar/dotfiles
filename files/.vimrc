@@ -42,6 +42,7 @@ autocmd BufNewFile,BufRead *.thor set sw=2 ts=2 ft=ruby
 autocmd BufNewFile,BufRead Rakefile set ft=ruby sw=2 ts=2 makeprg="rake"
 autocmd BufNewFile,BufRead Capfile set ft=ruby sw=2 ts=2 makeprg="cap"
 autocmd BufNewFile,BufRead Gemfile set ft=ruby sw=2 ts=2 makeprg="bundle"
+autocmd BufNewFile,BufRead Guardfile set ft=ruby sw=2 ts=2
 autocmd BufNewFile,BufRead Thorfile set ft=ruby sw=2 ts=2 makeprg="thor"
 autocmd BufNewFile,BufRead *.gemspec set ft=ruby sw=2 ts=2
 
