@@ -15,7 +15,9 @@
     pl = pull
     pu = push
     l = log
+    sl = log --show-signature
     l1 = log -n 1
+    sl1 = log -n 1 --show-signature
     cip = "!f() { \
       git commit \"$@\" && \
       git push ; \
