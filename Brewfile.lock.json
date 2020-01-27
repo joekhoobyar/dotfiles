@@ -65,6 +65,12 @@
       },
       "zoomus": {
         "version": "4.5.5416.0929"
+      },
+      "keybase": {
+        "version": "5.1.1-20191211223249,15bbb94c23"
+      },
+      "gpg-suite-no-mail": {
+        "version": "2019.2"
       }
     },
     "brew": {

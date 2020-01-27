@@ -1,6 +1,7 @@
 [user]
-	name = Joe Khoobyar
+    name = Joe Khoobyar
     email = fourheads@gmail.com
+    signingkey = 95F9BAF236AF4A4A7CACB9C59DA3226DFE9A0729
 
 [core]
     excludesfile = ~/.gitignore
@@ -26,3 +27,5 @@
       git fetch rean pull/$PR/head:pr-$PR && \
       git checkout pr-$PR; \
   }; f"
+[commit]
+	gpgsign = true

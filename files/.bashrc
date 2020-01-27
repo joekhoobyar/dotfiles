@@ -48,3 +48,5 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Preferring OpenSSL
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
+# Using GPG in commits
+export GPG_TTY=$(tty)
