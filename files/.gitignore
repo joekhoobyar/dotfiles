@@ -2,6 +2,9 @@
 .DS_Files
 .DS_Store
 
+# Tool output
+.yardoc/*
+
 # Environment specific files
 .envrc
 
@@ -15,3 +18,6 @@
 
 # Build system specific files
 target/*
+
+# Local test scripts
+/t.rb
