@@ -3,12 +3,12 @@
 # helm
 #
 # This updates helm dependencies.
-set -e
+set -ex
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 
 have_helm_plugin() {
-    helm plugin list | cut -f 1 | grep -q "^$1\$"
+    helm plugin list | cut -f 1 | tr -d '[:blank:]' | grep -q "^$1\$"
 }
 
 helm_plugin() {
