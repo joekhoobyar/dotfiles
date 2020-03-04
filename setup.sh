@@ -34,6 +34,9 @@ printf "\n> homebrew\n"
 homebrew/install.sh
 homebrew/update.sh
 
+printf "\n> helm\n"
+helm/update.sh
+
 printf "\n> ruby\n"
 ruby/update.sh
 
