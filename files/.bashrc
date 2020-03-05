@@ -14,7 +14,7 @@ export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W\[\033[01;36m\]$(__git_ps1 " (%s)
 
 # Path munging
 pre_path=''
-for d in /usr/local/lib/ruby/gems/2.5.0/bin /usr/local/opt/ruby/bin
+for d in /usr/local/lib/ruby/gems/2.5.0/bin /usr/local/opt/ruby@2.5/bin
 do
     [ -d "$d" ] && pre_path="$d:"
 done
