@@ -40,4 +40,7 @@ helm/update.sh
 printf "\n> ruby\n"
 ruby/update.sh
 
+printf "\n> go\n"
+go/update.sh
+
 exit 0

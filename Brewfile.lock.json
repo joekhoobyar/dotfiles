@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/core": {
-        "revision": "897c53114c662fabd1eb3e371eda38bdfe1f17be"
+        "revision": "2324d76b79bd4d17411f23087dbaa5b91aaae530"
       },
       "homebrew/bundle": {
         "revision": "50a4435475f1022242c41d4191f0b4789f67abc8"
@@ -740,7 +740,7 @@
         }
       },
       "youtube-dl": {
-        "version": "2020.03.01",
+        "version": "2020.03.06",
         "bottle": false
       },
       "azure-cli": {
@@ -876,6 +876,27 @@
             }
           }
         }
+      },
+      "go": {
+        "version": "1.14",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.catalina.bottle.tar.gz",
+              "sha256": "a4e81b1025b77af039a34888545ce0f4a3a332b1ed6358ca8107e878d25e46aa"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.mojave.bottle.tar.gz",
+              "sha256": "998c9c9f95091a3567d9ac27def2d3d4d33aeae06e621d78bf76f3f4f4a2a793"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.high_sierra.bottle.tar.gz",
+              "sha256": "c26d2ecb7e2c53a78fa0cca9b7117355f953ebf1b4bd31eef04ebe4e576a174b"
+            }
+          }
+        }
       }
     }
   },
@@ -884,7 +905,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.9",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "897c53114c662fabd1eb3e371eda38bdfe1f17be",
+        "Homebrew/homebrew-core": "2324d76b79bd4d17411f23087dbaa5b91aaae530",
         "CLT": "11.0.33.17",
         "Xcode": "11.3",
         "macOS": "10.15.3"
