@@ -1,4 +1,5 @@
 set nocompatible
+
 "filetype off                  " required
 "
 "" set the runtime path to include Vundle and initialize
@@ -77,3 +78,6 @@ autocmd BufNewFile,BufRead *.json set ft=json
 syntax enable
 colorscheme darkblue
 syntax enable
+
+set modeline
+set modelines=5
