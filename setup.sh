@@ -32,7 +32,7 @@ printf "\n> dotfiles symlinks\n"
 
 printf "\n> homebrew\n"
 homebrew/install.sh
-homebrew/update.sh
+homebrew/update.sh || true
 
 printf "\n> helm\n"
 helm/update.sh

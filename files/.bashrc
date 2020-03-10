@@ -11,16 +11,6 @@ export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W\[\033[01;36m\]$(__git_ps1 " (%s)
 #export GIT_PS1_SHOWDIRTYSTATE=1
 #export GIT_PS1_SHOWSTASHSTATE=1
 
-
-# Path munging
-pre_path=''
-for d in /usr/local/lib/ruby/gems/2.5.0/bin /usr/local/opt/ruby@2.5/bin
-do
-    [ -d "$d" ] && pre_path="$d:"
-done
-export PATH="$HOME/bin:$pre_path$PATH"
-unset pre_path
-
 # Other initialization
 export EDITOR=/usr/bin/vim
 export ANSIBLE_INVENTORY='inventory,ansible/inventory,/usr/local/etc/ansible/hosts'
@@ -35,6 +25,8 @@ for p in ~/.bash/*.sh; do
     [ -r "$p" ] && source "$p"
 done
 [ -r ~/.localrc ] && source ~/.localrc
+
+export PATH="$HOME/bin:$PATH"
 
 alias rk='bundle exec rake'
 alias g='git'
