@@ -40,6 +40,7 @@ alias rk='bundle exec rake'
 alias g='git'
 alias k='kubectl'
 alias kn='kubens'
+alias kush='kubectl run -it alpine --image=alpine --restart=Never -- sh --login'
 
 # Using krew
 eval "$(direnv hook bash)"
