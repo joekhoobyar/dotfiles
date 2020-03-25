@@ -34,6 +34,13 @@ printf "\n> homebrew\n"
 homebrew/install.sh
 homebrew/update.sh || true
 
+printf "\n> git\n"
+if ! [ -x ~/bin/git-filter-repo ]; then
+    echo "~/bin/git-filter-repo"
+    wget -O ~/bin/git-filter-repo https://raw.githubusercontent.com/newren/git-filter-repo/master/git-filter-repo
+    chmod +x ~/bin/git-filter-repo
+fi
+
 printf "\n> helm\n"
 helm/update.sh
 
