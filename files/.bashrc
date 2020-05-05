@@ -30,18 +30,6 @@ export PATH="$HOME/bin:$PATH"
 
 alias rk='bundle exec rake'
 alias g='git'
-alias k='kubectl'
-alias kn='kubens'
-alias kush='kubectl run -it alpine --image=alpine --restart=Never -- sh --login'
-
-function kpn() {
-    local node="$1"
-    kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=$node
-}
-
-# Using krew
-eval "$(direnv hook bash)"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Preferring OpenSSL
 export PATH="/usr/local/opt/openssl/bin:$PATH"
