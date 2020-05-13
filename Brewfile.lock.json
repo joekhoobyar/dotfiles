@@ -55,7 +55,7 @@
         }
       },
       "iterm2": {
-        "version": "3.2.9",
+        "version": "3.3.7",
         "options": {
           "full_name": "iterm2"
         }
@@ -67,7 +67,7 @@
         }
       },
       "minikube": {
-        "version": "1.4.0",
+        "version": "0.35.0",
         "options": {
           "full_name": "minikube"
         }
@@ -79,13 +79,13 @@
         }
       },
       "typora": {
-        "version": "0.9.9.25.3",
+        "version": "0.9.9.23.4",
         "options": {
           "full_name": "typora"
         }
       },
       "tunnelblick": {
-        "version": "3.8.0,5370",
+        "version": "3.8.1,5400",
         "options": {
           "full_name": "tunnelblick"
         }
@@ -127,7 +127,7 @@
         }
       },
       "whatsapp": {
-        "version": "0.4.930",
+        "version": "0.4.1300",
         "options": {
           "full_name": "whatsapp"
         }
@@ -928,7 +928,7 @@
         "HOMEBREW_VERSION": "2.2.16",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "e33e3cbe24a510b331eef007b73829df2c621d30",
-        "CLT": "11.0.33.17",
+        "CLT": "",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"
       },
