@@ -10,6 +10,7 @@ DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 printf "\n> brew update\n"
 brew update
 brew upgrade
+brew cask upgrade
 
 printf "\n> brew bundle cleanup\n"
 [ -r ~/Brewfile.local ] || touch ~/Brewfile.local
