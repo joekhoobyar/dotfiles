@@ -15,8 +15,13 @@ export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W\[\033[01;36m\]$(__git_ps1 " (%s)
 export EDITOR=/usr/bin/vim
 export ANSIBLE_INVENTORY='inventory,ansible/inventory,/usr/local/etc/ansible/hosts'
 alias be='bundle exec'
-alias ls='gls --color=auto'
-alias ll='gls --color=auto -l'
+if command -v gls >/dev/null; then
+    alias ls='gls --color=auto'
+    alias ll='gls --color=auto -l'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls --color=auto -l'
+fi
 alias vi=vim
 
 eval "$(direnv hook bash)"

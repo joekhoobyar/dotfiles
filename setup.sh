@@ -5,12 +5,25 @@
 # This sets up dotfiles
 set -e
 
+OS=$(uname -s)
+case $OS in
+Darwin)
+	OS=mac
+	;;
+Linux)
+	OS=unix
+	;;
+*)
+	echo "Unsupported OS: $OS" >&2 ; exit 1
+	;;
+esac
+
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 # Making directories for initialization files.
 printf "\n> dotfiles dirs\n"
 (cd "$DOTFILES_REPO" &&
-    find files -type d -mindepth 1 | sed -e s@^files/@@g | while read subdir
+    find files -mindepth 1 -type d | sed -e s@^files/@@g | while read subdir
     do
             echo mkdir -p ~/"$subdir"
             mkdir -p ~/"$subdir"
@@ -30,15 +43,10 @@ printf "\n> dotfiles symlinks\n"
         fi
     done)
 
-printf "\n> homebrew\n"
-homebrew/install.sh
-homebrew/update.sh || true
-
-printf "\n> git\n"
-if ! [ -x ~/bin/git-filter-repo ]; then
-    echo "~/bin/git-filter-repo"
-    wget -O ~/bin/git-filter-repo https://raw.githubusercontent.com/newren/git-filter-repo/master/git-filter-repo
-    chmod +x ~/bin/git-filter-repo
+if [ "$OS" == "mac" ]; then
+    printf "\n> homebrew\n"
+    homebrew/install.sh
+    homebrew/update.sh || true
 fi
 
 printf "\n> helm\n"
