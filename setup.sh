@@ -47,6 +47,8 @@ if [ "$OS" == "mac" ]; then
     printf "\n> homebrew\n"
     homebrew/install.sh
     homebrew/update.sh || true
+else
+    printf "\n> homebrew [SKIP]\n"
 fi
 
 printf "\n> helm\n"
