@@ -5,6 +5,22 @@
 # This sets up dotfiles
 set -e
 
+ARCH=$(uname -m)
+case $ARCH in
+x86)
+    ;;
+x86_64)
+    ARCH=amd64
+    ;;
+armv[8-9]*|armv1[0-9]*)
+    ARCH=arm64
+    ;;
+arm*)
+    ARCH=arm32
+    ;;
+esac
+export ARCH
+
 OS=$(uname -s)
 case $OS in
 Darwin)
