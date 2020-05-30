@@ -33,6 +33,7 @@ Linux)
 	echo "Unsupported OS: $OS" >&2 ; exit 1
 	;;
 esac
+export OS
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
@@ -61,6 +62,8 @@ printf "\n> dotfiles symlinks\n"
 
 printf "\n> homebrew\n"
 homebrew/install.sh
+command -v brew >/dev/null || eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export PATH
 homebrew/update.sh || true
 
 printf "\n> keybase\n"
