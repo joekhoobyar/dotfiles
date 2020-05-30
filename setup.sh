@@ -43,13 +43,13 @@ printf "\n> dotfiles symlinks\n"
         fi
     done)
 
-if [ "$OS" == "mac" ]; then
+#if [ "$OS" == "mac" ]; then
     printf "\n> homebrew\n"
     homebrew/install.sh
     homebrew/update.sh || true
-else
-    printf "\n> homebrew [SKIP]\n"
-fi
+#else
+#    printf "\n> homebrew [SKIP]\n"
+#fi
 
 printf "\n> helm\n"
 helm/update.sh

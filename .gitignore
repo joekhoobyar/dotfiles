@@ -1,4 +1,5 @@
 /Brewfile
+/Brewfile.lock.json
 .idea
 .DS_Files
 .DS_Store
