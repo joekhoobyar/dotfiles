@@ -60,11 +60,14 @@ printf "\n> dotfiles symlinks\n"
         fi
     done)
 
-printf "\n> homebrew\n"
-homebrew/install.sh
-command -v brew >/dev/null || eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-export PATH
-homebrew/update.sh || true
+# Installing homebrew
+if [ "$OS" == "mac" ] || [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86" ]; then
+    printf "\n> homebrew\n"
+    homebrew/install.sh
+    command -v brew >/dev/null || eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    export PATH
+    homebrew/update.sh || true
+fi
 
 printf "\n> keybase\n"
 keybase/install.sh
