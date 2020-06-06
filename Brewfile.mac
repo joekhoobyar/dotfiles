@@ -43,6 +43,7 @@ brew "pandoc"
 brew "pipenv"
 brew "python"
 brew "ruby@2.5", link: true, conflicts_with: ['ruby']
+brew "sonar-scanner"
 brew "tektoncd/tools/tektoncd-cli"
 brew "terraform"
 brew "unrar"
