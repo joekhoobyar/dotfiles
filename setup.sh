@@ -83,4 +83,7 @@ ruby/update.sh
 printf "\n> go\n"
 go/update.sh
 
+printf "\n> misc\n"
+misc/update.sh
+
 exit 0
