@@ -33,3 +33,5 @@
 	gpgsign = true
 [pull]
 	rebase = false
+[diff "sopsdiffer"]
+	textconv = sops -d
