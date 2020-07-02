@@ -15,6 +15,7 @@
 .project
 .buildpath
 .settings/*
+.rakeTasks
 *~
 **/*~
 
