@@ -4,6 +4,8 @@
 
 # Tool output
 .yardoc/*
+*.tfstate*
+.terraform
 
 # Environment specific files
 .envrc
