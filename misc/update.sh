@@ -24,6 +24,11 @@ esac
 
 printf "\n> misc update\n"
 
+printf "> misc - hukum\n"
+if ! command -v hukum >/dev/null; then
+    npm install --global hukum
+fi
+
 printf "> misc - yaml2json\n"
 if ! command -v ~/bin/yaml2json >/dev/null; then
     wget -O ~/bin/yaml2json https://github.com/bronze1man/yaml2json/releases/download/v1.3/"yaml2json_${OS}_${ARCH}"
