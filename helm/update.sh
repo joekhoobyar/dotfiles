@@ -7,8 +7,12 @@ set -ex
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 
+helm3() {
+    /usr/local/opt/helm@3/bin/helm "$@"
+}
+
 have_helm_plugin() {
-    helm plugin list | cut -f 1 | tr -d '[:blank:]' | grep -q "^$1\$"
+    helm3 plugin list | cut -f 1 | tr -d '[:blank:]' | grep -q "^$1\$"
 }
 
 helm_plugin() {
@@ -16,9 +20,9 @@ helm_plugin() {
     [ -z "$name" ] && name="$(basename "$repo" .git)"
     printf "  + $name\n"
     if have_helm_plugin "$name"; then
-        helm plugin update "$name"
+        helm3 plugin update "$name"
     else
-        helm plugin install "$repo"
+        helm3 plugin install "$repo"
     fi
 }
 

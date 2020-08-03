@@ -69,10 +69,11 @@ if [ "$OS" == "mac" ] || [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86" ]; then
     homebrew/update.sh || true
 fi
 
-if [ "$OS" == "mac" ] || [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86" ]; then
-    printf "\n> keybase\n"
-    keybase/install.sh
-fi
+# Disable unattended keybase installation.
+#if [ "$OS" == "mac" ] || [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86" ]; then
+#    printf "\n> keybase\n"
+#    keybase/install.sh
+#fi
 
 printf "\n> helm\n"
 helm/update.sh
