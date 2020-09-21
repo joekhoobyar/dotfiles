@@ -8,7 +8,11 @@ set -ex
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 
 helm3() {
-    /usr/local/opt/helm@3/bin/helm "$@"
+    if [ -x /usr/local/opt/helm@3/bin/helm ]; then
+        /usr/local/opt/helm@3/bin/helm "$@"
+    else
+        helm "$@"
+    fi
 }
 
 have_helm_plugin() {
