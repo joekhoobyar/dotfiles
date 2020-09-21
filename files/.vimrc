@@ -69,6 +69,7 @@ autocmd BufNewFile,BufRead *.rpkg set ft=sh
 autocmd BufNewFile,BufRead *.rl set sw=2 ts=2 ft=ragel
 autocmd BufNewFile,BufRead *.yaml set sw=2 ts=2 ft=yaml
 autocmd BufNewFile,BufRead *.yml set sw=2 ts=2 ft=yaml
+autocmd BufNewFile,BufRead *.tf set sw=2 ts=2
 
 autocmd BufNewFile,BufRead nginx.conf set ft=nginx
 autocmd BufNewFile,BufRead nginx.d/* set ft=nginx
