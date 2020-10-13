@@ -6,6 +6,7 @@
 .yardoc/*
 *.tfstate*
 .terraform
+node_modules/*
 
 # Environment specific files
 .envrc
