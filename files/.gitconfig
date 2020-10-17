@@ -22,13 +22,15 @@
       git commit \"$@\" && \
       git push ; \
     }; f"
-    copr = "!f() { \
-      declare PR=\"$1\"; \
-      [ -z \"$PR\" ] && echo 'usage: git copr PR' 1>&2 && return 1 ; \
-      git fetch --all > /dev/null && \
-      git fetch rean pull/$PR/head:pr-$PR && \
-      git checkout pr-$PR; \
-  }; f"
+    cpmerge = "!f() { \
+      declare DEST=\"$(git rev-parse --abbrev-ref HEAD)\"; \
+      declare SRC=\"$1\"; shift ; \
+      [ -z \"$SRC\" ] && echo 'usage: git merge SRC ...' 1>&2 && return 1 ; \
+      git checkout \"$SRC\" && \
+      git pull && \
+      git checkout \"$DEST\" && \
+      git merge \"$SRC\" \"$@\"; \
+    }; f"
 [commit]
 	gpgsign = true
 [pull]
