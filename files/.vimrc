@@ -1,5 +1,7 @@
 set nocompatible
 
+set rtp+=~/.vim/bundle
+
 "filetype off                  " required
 "
 "" set the runtime path to include Vundle and initialize
@@ -65,6 +67,7 @@ autocmd BufNewFile,BufRead .envrc set ft=sh sw=4
 "source $VIMRUNTIME/macros/matchit.vim
 set mouse=cvh
 
+autocmd BufNewFile,BufRead *.ps1 set ft=ps1
 autocmd BufNewFile,BufRead *.rpkg set ft=sh
 autocmd BufNewFile,BufRead *.rl set sw=2 ts=2 ft=ragel
 autocmd BufNewFile,BufRead *.yaml set sw=2 ts=2 ft=yaml

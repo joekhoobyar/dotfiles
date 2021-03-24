@@ -24,6 +24,11 @@ esac
 
 printf "\n> misc update\n"
 
+printf "> misc - vimrc\n"
+if ! [ -d ~/.vim/bundle/vim-powershell ]; then
+    (mkdir -p ~/.vim/bundle && cd ~/.vim/bundle && git clone https://github.com/zigford/vim-powershell.git)
+fi
+
 printf "> misc - hukum\n"
 if ! command -v hukum >/dev/null; then
     npm install --global hukum
