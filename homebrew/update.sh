@@ -24,12 +24,6 @@ printf "\n> brew update\n"
 brew update
 printf "> brew upgrade\n"
 brew upgrade
-if [ "$OS" == "mac" ]; then
-    printf "> brew cask upgrade\n"
-    brew cask upgrade
-else
-    printf "> brew cask upgrade [SKIP]\n"
-fi
 
 [ -r ~/Brewfile.local ] || touch ~/Brewfile.local
 
