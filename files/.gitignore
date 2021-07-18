@@ -26,3 +26,5 @@ target/*
 # Local test scripts
 /t.rb
 duplo.log
+
+environment.ts

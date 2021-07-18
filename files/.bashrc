@@ -14,6 +14,7 @@ export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W\[\033[01;36m\]$(__git_ps1 " (%s)
 # Other initialization
 export EDITOR=/usr/bin/vim
 export ANSIBLE_INVENTORY='inventory,ansible/inventory,/usr/local/etc/ansible/hosts'
+#export ANSIBLE_INVENTORY_PLUGINS='plugins/inventory,~/.ansible/plugins/inventory,/usr/share/ansible/plugins/inventory'
 alias be='bundle exec'
 if command -v gls >/dev/null; then
     alias ls='gls --color=auto'
