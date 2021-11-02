@@ -51,6 +51,7 @@ OPENSCAD_LIBS=( \
     JohK/nutsnbolts \
     adrianschlatter/threadlib \
     revarbat/BOSL \
+    jreinhardt/local-scad \
 )
 
 # libraries
