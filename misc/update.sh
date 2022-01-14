@@ -24,6 +24,22 @@ esac
 
 printf "\n> misc update\n"
 
+if [ "$OS" == "darwin" ]; then
+    tmutil addexclusion /Users/joe/Library/Containers/com.docker.docker/
+    tmutil addexclusion /Users/joe/Library/Containers/com.docker.helper/
+fi
+
+printf "> misc - vimrc\n"
+if ! command -v cmctl >/dev/null; then
+    (
+        xOS=$(go env GOOS)
+        xARCH=$(go env GOARCH)
+        curl -L -o cmctl.tar.gz https://github.com/jetstack/cert-manager/releases/latest/download/cmctl-$xOS-$xARCH.tar.gz
+        tar xzf cmctl.tar.gz
+        sudo mv cmctl /usr/local/bin
+    )
+fi
+
 printf "> misc - vimrc\n"
 if ! [ -d ~/.vim/bundle/vim-powershell ]; then
     (mkdir -p ~/.vim/bundle && cd ~/.vim/bundle && git clone https://github.com/zigford/vim-powershell.git)
