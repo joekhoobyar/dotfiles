@@ -3,6 +3,7 @@
 .DS_Store
 
 # Tool output
+dump.rdb
 .yardoc/*
 *.tfstate*
 .terraform
@@ -10,6 +11,7 @@ node_modules/*
 
 # Environment specific files
 .envrc
+.envrc.*
 
 # Editor / IDE specific files
 .idea/*
