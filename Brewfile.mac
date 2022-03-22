@@ -12,7 +12,7 @@ tap "versent/homebrew-taps"
 tap "warrensbox/tap"
 
 brew "1password-cli"
-brew "act"
+brew "act", args: ['HEAD']
 brew "ansible"
 brew "autoconf"
 brew "automake"
