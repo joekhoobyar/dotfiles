@@ -11,8 +11,8 @@ DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 source ~/.bash/golang.sh
 
 printf "\n> golang update\n"
-go get golang.org/x/tools/cmd/godoc
-go get golang.org/x/tools/gopls
+go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/tools/gopls@latest
 command -v gox >/dev/null || go get github.com/mitchellh/gox
 
 exit 0
