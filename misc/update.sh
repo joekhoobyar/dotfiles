@@ -29,7 +29,7 @@ if [ "$OS" == "darwin" ]; then
     tmutil addexclusion /Users/joe/Library/Containers/com.docker.helper/
 fi
 
-printf "> misc - vimrc\n"
+printf "> misc - cmctl\n"
 if ! command -v cmctl >/dev/null; then
     (
         xOS=$(go env GOOS)
@@ -55,5 +55,6 @@ if ! command -v ~/bin/yaml2json >/dev/null; then
     wget -O ~/bin/yaml2json https://github.com/bronze1man/yaml2json/releases/download/v1.3/"yaml2json_${OS}_${ARCH}"
     chmod +x ~/bin/yaml2json
 fi
+
 
 exit 0
