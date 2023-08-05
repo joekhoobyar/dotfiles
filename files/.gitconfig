@@ -32,7 +32,7 @@
       git merge \"$SRC\" \"$@\"; \
     }; f"
 [commit]
-#	gpgsign = true
+	gpgsign = true
 [pull]
 	rebase = false
 [diff "sopsdiffer"]
