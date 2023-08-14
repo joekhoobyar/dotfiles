@@ -59,6 +59,7 @@ printf "\n> dotfiles symlinks\n"
             ln -nsf "$DOTFILES_REPO"/files/"$item" ~/"$item"
         fi
     done)
+sudo mkdir -p /usr/local/opt
 
 # Installing homebrew
 if [ "$OS" == "mac" ] || [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86" ]; then

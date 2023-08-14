@@ -6,6 +6,7 @@
 set -e
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
+mkdir -p $HOME/src/go
 
 # First, include settings
 source ~/.bash/golang.sh
