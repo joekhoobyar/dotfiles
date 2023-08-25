@@ -11,3 +11,4 @@ alias ll='ls -lF'
 alias la='ls -alF'
 
 set -o vi
+echo "hi bash_profile"

@@ -1,3 +1,13 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+autoload -Uz promptinit; promptinit; prompt fade green
+autoload -U colors; colors
+
 if [ -d /opt/homebrew ]
 then eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
@@ -8,12 +18,6 @@ if [[ $- != *i* ]] ; then
 fi
 
 set -o vi
-
-# Git Bash Prompts
-#export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;36m\]$(__git_ps1 " (%s)") \[\033[01;34m\]\$\[\033[00m\] '
-export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W\[\033[01;36m\]$(__git_ps1 " (%s)") \[\033[01;34m\]\$\[\033[00m\] '
-#export GIT_PS1_SHOWDIRTYSTATE=1
-#export GIT_PS1_SHOWSTASHSTATE=1
 
 # Other initialization
 export EDITOR=/usr/bin/vim
@@ -29,7 +33,7 @@ else
 fi
 alias vi=vim
 
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 
 for p in ~/.bash/*.sh; do
     [ -r "$p" ] && source "$p"
@@ -46,4 +50,10 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Using GPG in commits
 export GPG_TTY=$(tty)
-echo "hi bash_profile"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Enable vi mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
