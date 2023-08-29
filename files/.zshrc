@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -Uz promptinit; promptinit; prompt fade green
-autoload -U colors; colors
-
 if [ -d /opt/homebrew ]
 then eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
@@ -50,6 +47,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Using GPG in commits
 export GPG_TTY=$(tty)
+autoload -Uz promptinit; promptinit
+autoload -U colors; colors
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
