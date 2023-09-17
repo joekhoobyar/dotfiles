@@ -5,8 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [ -d /opt/homebrew ]
-then eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v brew 2>&1 >/dev/null; then
+    export MY_HOMEBREW_DIR=$(brew --prefix)
+    eval "$($MY_HOMEBREW_DIR/bin/brew shellenv)"
 fi
 
 if [[ $- != *i* ]] ; then
@@ -43,16 +44,23 @@ alias rk='bundle exec rake'
 alias g='git'
 
 # Preferring OpenSSL
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+[ -n "$MY_HOMEBREW_DIR" ] && export PATH="$MY_HOMEBREW_DIR/opt/openssl/bin:$PATH"
 
 # Using GPG in commits
 export GPG_TTY=$(tty)
 autoload -Uz promptinit; promptinit
 autoload -U colors; colors
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+f="$MY_HOMEBREW_DIR/opt/powerlevel10k/powerlevel10k.zsh-theme"
+if [ -r "$f" ]
+then source "$f"
+else
+    f="$MY_HOMEBREW_DIR/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme"
+    [ -r "$f" ] && source "$f"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Enable vi mode
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+[ -n "$MY_HOMEBREW_DIR" ] && source "$MY_HOMEBREW_DIR/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
