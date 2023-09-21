@@ -5,10 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if command -v brew 2>&1 >/dev/null; then
-    export MY_HOMEBREW_DIR=$(brew --prefix)
-    eval "$($MY_HOMEBREW_DIR/bin/brew shellenv)"
+# Get homebrew paths
+if command -v brew 2>&1 >/dev/null
+then export MY_HOMEBREW_DIR=$(brew --prefix)
+elif command -v /opt/homebrew/bin/brew 2>&1 >/dev/null
+then export MY_HOMEBREW_DIR=$(/opt/homebrew/bin/brew --prefix)
+elif command -v /usr/local/bin/brew 2>&1 >/dev/null
+then export MY_HOMEBREW_DIR=$(/usr/local/bin/brew --prefix)
 fi
+[ -n "$MY_HOMEBREW_DIR" ] && eval "$($MY_HOMEBREW_DIR/bin/brew shellenv)"
 
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
