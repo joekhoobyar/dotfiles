@@ -1,6 +1,4 @@
-tap "homebrew/core"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 
 tap "AdoptOpenJDK/openjdk"
 tap "aws/tap"
@@ -10,6 +8,7 @@ tap "jenkins-x/jx"
 tap "johanhaleby/kubetail"
 tap "Ladicle/kubectl-bindrole"
 tap "linuxkit/linuxkit"
+tap "mongodb/brew"
 tap "versent/homebrew-taps"
 tap "warrensbox/tap"
 
