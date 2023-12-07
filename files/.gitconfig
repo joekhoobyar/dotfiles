@@ -44,3 +44,5 @@
 	clean = git-lfs clean -- %f
 [safe]
 	directory = *
+[push]
+	autoSetupRemote = true

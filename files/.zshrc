@@ -69,3 +69,4 @@ fi
 
 # Enable vi mode
 [ -n "$MY_HOMEBREW_DIR" ] && source "$MY_HOMEBREW_DIR/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
