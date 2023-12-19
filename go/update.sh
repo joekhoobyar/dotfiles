@@ -14,6 +14,6 @@ source ~/.bash/golang.sh
 printf "\n> golang update\n"
 go install golang.org/x/tools/cmd/godoc@latest
 go install golang.org/x/tools/gopls@latest
-command -v gox >/dev/null || go get github.com/mitchellh/gox
+command -v gox >/dev/null || go install github.com/mitchellh/gox@latest
 
 exit 0
