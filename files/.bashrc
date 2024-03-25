@@ -46,4 +46,3 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Using GPG in commits
 export GPG_TTY=$(tty)
-echo "hi bash_profile"

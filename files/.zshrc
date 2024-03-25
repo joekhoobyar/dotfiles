@@ -65,7 +65,7 @@ else
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -r ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Enable vi mode
 [ -n "$MY_HOMEBREW_DIR" ] && source "$MY_HOMEBREW_DIR/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
