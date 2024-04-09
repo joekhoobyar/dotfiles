@@ -1,5 +1,9 @@
-if [ -d /opt/homebrew ]
-then eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -d /opt/homebrew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PATH="/opt/homebrew/bin:$PATH"
+elif [ -d /home/linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
 if [[ $- != *i* ]] ; then
@@ -46,3 +50,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Using GPG in commits
 export GPG_TTY=$(tty)
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
