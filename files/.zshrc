@@ -41,7 +41,7 @@ eval "$(direnv hook zsh)"
 for p in ~/.bash/*.sh; do
     [ -r "$p" ] && source "$p"
 done
-[ -r ~/.localrc ] && source ~/.localrc
+[ -r "$HOME/.localrc" ] && source "$HOME/.localrc"
 
 export PATH="$HOME/bin:$PATH"
 

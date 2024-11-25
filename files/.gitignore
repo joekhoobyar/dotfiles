@@ -1,6 +1,7 @@
 # OS specific annoyances
 .DS_Files
 .DS_Store
+bin/*
 
 # Tool output
 dump.rdb
