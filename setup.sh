@@ -88,6 +88,9 @@ go/update.sh
 printf "\n> rust\n"
 rust/update.sh
 
+printf "\n> java\n"
+java/update.sh
+
 printf "\n> openscad\n"
 openscad/update.sh
 
