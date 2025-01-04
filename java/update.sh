@@ -1,8 +1,8 @@
 #!/bin/bash -l
 #
-# ruby
+# java
 #
-# This updates ruby plus dependencies.
+# This updates java plus dependencies.
 set -e
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
