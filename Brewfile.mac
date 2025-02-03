@@ -78,7 +78,7 @@ brew "python"
 brew "qemu"
 brew "redis"
 brew "rg"
-brew "ruby@2.7", link: true, conflicts_with: ['ruby']
+brew "ruby@2.7", link: false, conflicts_with: ['ruby']
 brew "rustup-init"
 brew "saml2aws"
 brew "sonar-scanner"
