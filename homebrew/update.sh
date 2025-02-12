@@ -22,8 +22,6 @@ DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 
 printf "\n> brew update\n"
 brew update
-printf "> brew upgrade\n"
-brew upgrade
 
 [ -r ~/Brewfile.local ] || touch ~/Brewfile.local
 
@@ -33,8 +31,13 @@ printf "\n> brew bundle\n"
         cp "Brewfile.lock.json.$OS" "Brewfile.lock.json"
     fi &&
     cat Brewfile.$OS ~/Brewfile.local >Brewfile &&
-    brew bundle &&
-    cp "Brewfile.lock.json" "Brewfile.lock.json.$OS")
+    brew bundle ;
+    ec=$? ;
+    cp "Brewfile.lock.json" "Brewfile.lock.json.$OS"
+    exit $? )
+
+printf "> brew upgrade\n"
+brew upgrade
 
 printf "\n> brew bundle cleanup\n"
 (cd "$DOTFILES_REPO" &&

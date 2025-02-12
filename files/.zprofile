@@ -1,9 +1,6 @@
-if [ -x /usr/local/bin/brew ]
-then eval "$(/usr/local/bin/brew shellenv)"
-else eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+k=/opt/homebrew/bin/brew ; [ -r "$k" ] && eval "$("$k" shellenv)"
 
-# Add sdkman
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 [ -r "$HOME/.localrc" ] && source "$HOME/.localrc"

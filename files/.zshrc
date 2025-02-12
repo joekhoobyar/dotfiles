@@ -10,8 +10,6 @@ if command -v brew 2>&1 >/dev/null
 then export MY_HOMEBREW_DIR=$(brew --prefix)
 elif command -v /opt/homebrew/bin/brew 2>&1 >/dev/null
 then export MY_HOMEBREW_DIR=$(/opt/homebrew/bin/brew --prefix)
-elif command -v /usr/local/bin/brew 2>&1 >/dev/null
-then export MY_HOMEBREW_DIR=$(/usr/local/bin/brew --prefix)
 fi
 [ -n "$MY_HOMEBREW_DIR" ] && eval "$($MY_HOMEBREW_DIR/bin/brew shellenv)"
 
@@ -24,7 +22,7 @@ set -o vi
 
 # Other initialization
 export EDITOR=/usr/bin/vim
-export ANSIBLE_INVENTORY='inventory,ansible/inventory,/usr/local/etc/ansible/hosts'
+export ANSIBLE_INVENTORY='inventory,ansible/inventory,/opt/etc/ansible/hosts'
 #export ANSIBLE_INVENTORY_PLUGINS='plugins/inventory,~/.ansible/plugins/inventory,/usr/share/ansible/plugins/inventory'
 alias be='bundle exec'
 if command -v gls >/dev/null; then

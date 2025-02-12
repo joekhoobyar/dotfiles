@@ -1,6 +1,6 @@
 [ -r ~/.bashrc ] && . ~/.bashrc
 
-[ -r /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -r /opt/homebrew/etc/bash_completion ] && . /opt/homebrew/etc/bash_completion
 
 . ~/.bash-completion/git
 . ~/.bash-completion/git-prompt
@@ -14,8 +14,8 @@ set -o vi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Add sdkman
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

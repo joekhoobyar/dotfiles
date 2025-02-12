@@ -1,22 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
 #
 # helm
 #
 # This updates helm dependencies.
-set -ex
 
 DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 
-helm3() {
-    if [ -x /usr/local/opt/helm@3/bin/helm ]; then
-        /usr/local/opt/helm@3/bin/helm "$@"
-    else
-        helm "$@"
-    fi
-}
-
 have_helm_plugin() {
-    helm3 plugin list | cut -f 1 | tr -d '[:blank:]' | grep -q "^$1\$"
+    helm plugin list | cut -f 1 | tr -d '[:blank:]' | grep -q "^$1\$"
 }
 
 helm_plugin() {
@@ -24,9 +15,9 @@ helm_plugin() {
     [ -z "$name" ] && name="$(basename "$repo" .git)"
     printf "  + $name\n"
     if have_helm_plugin "$name"; then
-        helm3 plugin update "$name"
+        helm plugin update "$name"
     else
-        helm3 plugin install "$repo"
+        helm plugin install "$repo"
     fi
 }
 
