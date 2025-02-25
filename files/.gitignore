@@ -1,7 +1,10 @@
 # OS specific annoyances
 .DS_Files
 .DS_Store
+.aws-creds
 bin/*
+.vscode/*
+.qodo/*
 
 # Tool output
 dump.rdb

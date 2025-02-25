@@ -16,6 +16,6 @@ printf "\n> nvm install 22.x\n"
 nvm install 22 --default
 
 printf "\n> npm install yarn\n"
-npm -g i yarn
+npm -g i yarn @linear/import
 
 exit 0
