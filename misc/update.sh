@@ -56,5 +56,7 @@ if ! command -v ~/bin/yaml2json >/dev/null; then
     chmod +x ~/bin/yaml2json
 fi
 
+printf "> misc - doppler\n"
+curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh | sudo sh
 
 exit 0
