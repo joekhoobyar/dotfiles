@@ -13,7 +13,7 @@ tap "warrensbox/tap"
 
 brew "act", args: ['HEAD']
 brew "ansible"
-brew "argo"
+brew "argocd"
 brew "autoconf"
 brew "automake"
 brew "awscli"
