@@ -12,5 +12,6 @@ if ! command -v sdk >/dev/null 2>&1; then
     curl -s "https://get.sdkman.io" | bash
 fi
 sdk selfupdate
+sdk update
 
 exit 0
