@@ -25,8 +25,8 @@ esac
 printf "\n> misc update\n"
 
 if [ "$OS" == "darwin" ]; then
-    tmutil addexclusion /Users/joe/Library/Containers/com.docker.docker/
-    tmutil addexclusion /Users/joe/Library/Containers/com.docker.helper/
+    tmutil addexclusion /Users/joe/Library/Containers/com.docker.docker/ || :
+    tmutil addexclusion /Users/joe/Library/Containers/com.docker.helper/ || :
 fi
 
 printf "> misc - cmctl\n"
