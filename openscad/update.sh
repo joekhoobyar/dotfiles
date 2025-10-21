@@ -64,17 +64,15 @@ do
 
     echo git clone "git@github.com:$ghr"
     if [ "$ghr" == "$lib" ]; then
-        (cd ~/src/openscad/lib &&
+        (mkdir -p ~/src/openscad/lib &&
+            cd ~/src/openscad/lib &&
             [ -d "$wd/.git" ] || git clone "git@github.com:$ghr")
     else
-        (cd ~/src/openscad/share &&
+        (mkdir -p ~/src/openscad/share &&
+            cd ~/src/openscad/share &&
             [ -d "$wd/.git" ] || git clone "git@github.com:$ghr")
 
         echo ln -nsf "../share/$wd/$subdir" "~/src/openscad/lib/$wd"
-    fi
-done
-
-exit 0
     fi
 done
 
