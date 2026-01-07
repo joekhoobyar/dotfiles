@@ -34,9 +34,8 @@ if ! command -v cmctl >/dev/null; then
     (
         xOS=$(go env GOOS)
         xARCH=$(go env GOARCH)
-        curl -L -o cmctl.tar.gz https://github.com/jetstack/cert-manager/releases/latest/download/cmctl-$xOS-$xARCH.tar.gz
-        tar xzf cmctl.tar.gz
-        sudo mv cmctl /usr/local/bin
+        curl -Lo /tmp/cmctl https://github.com/cert-manager/cmctl/releases/latest/download/cmctl_${xOS}_${xARCH}
+        sudo install -m 755 -o root /tmp/cmctl /usr/local/bin
     )
 fi
 
@@ -52,8 +51,12 @@ fi
 
 printf "> misc - yaml2json\n"
 if ! command -v ~/bin/yaml2json >/dev/null; then
-    wget -O ~/bin/yaml2json https://github.com/bronze1man/yaml2json/releases/download/v1.3/"yaml2json_${OS}_${ARCH}"
-    chmod +x ~/bin/yaml2json
+    (
+        xOS=$(go env GOOS)
+        xARCH=$(go env GOARCH)
+        wget -O ~/bin/yaml2json https://github.com/bronze1man/yaml2json/releases/download/v1.3.5/"yaml2json_${xOS}_${xARCH}"
+        chmod +x ~/bin/yaml2json
+    )
 fi
 
 printf "> misc - doppler\n"
