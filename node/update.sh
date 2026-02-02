@@ -16,6 +16,12 @@ printf "\n> nvm install 22.x\n"
 nvm install 22 --default
 
 printf "\n> npm install yarn\n"
-npm -g i yarn @linear/import
+npm -g i yarn
+
+printf "\n> npm install @linear/import\n"
+npm -g i @linear/import
+
+printf "\n> npm install openspec\n"
+npm -g i @fission-ai/openspec@latest
 
 exit 0

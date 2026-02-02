@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/joe/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,6 +18,8 @@ if command -v brew 2>&1 >/dev/null
 then export MY_HOMEBREW_DIR=$(brew --prefix)
 elif command -v /opt/homebrew/bin/brew 2>&1 >/dev/null
 then export MY_HOMEBREW_DIR=$(/opt/homebrew/bin/brew --prefix)
+elif command -v /usr/local/bin/brew 2>&1 >/dev/null
+then export MY_HOMEBREW_DIR=$(/usr/local/bin/brew --prefix)
 fi
 [ -n "$MY_HOMEBREW_DIR" ] && eval "$($MY_HOMEBREW_DIR/bin/brew shellenv)"
 
@@ -42,7 +51,7 @@ for p in ~/.bash/*.sh; do
 done
 [ -r "$HOME/.localrc" ] && source "$HOME/.localrc"
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 alias rk='bundle exec rake'
 alias g='git'
@@ -74,8 +83,8 @@ export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
 export PNPM_HOME="/Users/joe.khoobyar/Library/pnpm"
@@ -89,8 +98,8 @@ esac
 . "$HOME/.cargo/env"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/joe/.sdkman"
-[[ -s "/Users/joe/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/joe/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
