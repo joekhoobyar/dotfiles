@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 
 tap "AdoptOpenJDK/openjdk"
+tap "anomalyco/tap"
 tap "argoproj/tap"
 tap "aws/tap"
 tap "dorkitude/linctl"
@@ -14,6 +15,7 @@ tap "versent/homebrew-taps"
 tap "warrensbox/tap"
 
 brew "act", args: ['HEAD']
+brew "anomalyco/tap/opencode"
 brew "ansible"
 brew "argocd"
 brew "argoproj/tap/kubectl-argo-rollouts"
