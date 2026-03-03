@@ -31,8 +31,8 @@
       git checkout \"$DEST\" && \
       git merge \"$SRC\" \"$@\"; \
     }; f"
-[commit]
-	gpgsign = true
+#[commit]
+#	gpgsign = true
 [pull]
 	rebase = false
 [diff "sopsdiffer"]
