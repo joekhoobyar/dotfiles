@@ -1,1 +1,1 @@
-[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
+export PATH="$(brew --prefix rustup)/bin:$HOME/.cargo/bin:$PATH"

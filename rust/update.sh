@@ -11,6 +11,9 @@ DOTFILES_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd -P)"
 source ~/.bash/rust.sh
 
 printf "\n> rust update\n"
-command -v rustc >/dev/null || rustup-init --no-modify-path -y -c rust-src
+if ! command -v rustc >/dev/null; then
+    rustup toolchain install stable --profile default --component rust-src
+    rustup default stable
+fi
 
 exit 0
