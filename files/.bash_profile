@@ -41,4 +41,6 @@ set -o vi
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # rust
-. "$HOME/.cargo/env"
+[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+true
