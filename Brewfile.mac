@@ -1,17 +1,17 @@
 tap "homebrew/bundle"
 
-tap "AdoptOpenJDK/openjdk"
-tap "anomalyco/tap"
-tap "argoproj/tap"
-tap "aws/tap"
-tap "dorkitude/linctl"
-tap "goreleaser/tap"
-tap "johanhaleby/kubetail"
-tap "Ladicle/kubectl-bindrole"
-tap "linuxkit/linuxkit"
-tap "mongodb/brew"
-tap "versent/homebrew-taps"
-tap "warrensbox/tap"
+tap "AdoptOpenJDK/openjdk", trusted: true
+tap "anomalyco/tap", trusted: true
+tap "argoproj/tap", trusted: true
+tap "aws/tap", trusted: true
+tap "dorkitude/linctl", trusted: true
+tap "goreleaser/tap", trusted: true
+tap "johanhaleby/kubetail", trusted: true
+tap "Ladicle/kubectl-bindrole", trusted: true
+tap "linuxkit/linuxkit", trusted: true
+tap "mongodb/brew", trusted: true
+tap "versent/homebrew-taps", trusted: true
+tap "warrensbox/tap", trusted: true
 
 brew "act", args: ['HEAD']
 brew "ansible"
@@ -66,7 +66,7 @@ brew "k9s"
 brew "krb5"
 brew "krew"
 brew "kubernetes-cli"
-brew "argoproj/tap/kubectl-argo-rollouts"
+brew "argoproj/tap/kubectl-argo-rollouts", trusted: true
 brew "kubectl-cnpg"
 brew "kubectl-rolesum"
 brew "kubectx"
@@ -75,7 +75,7 @@ brew "kustomize"
 brew "lefthook"
 brew "libtool"
 brew "libpq"
-brew "dorkitude/linctl/linctl"
+brew "dorkitude/linctl/linctl", trusted: true
 brew "llvm"
 brew "lsusb"
 brew "m4"
@@ -88,7 +88,7 @@ brew "mongodb-community"
 brew "mosquitto"
 brew "mysql"
 brew "netpbm"
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 brew "p7zip"
 brew "parallel"
 brew "pandoc"
