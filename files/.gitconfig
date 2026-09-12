@@ -32,8 +32,8 @@
       git merge \"$SRC\" \"$@\"; \
     }; f"
 	cleanup-branches = git branch fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
-#[commit]
-#	gpgsign = true
+[commit]
+	gpgsign = true
 [pull]
 	rebase = false
 [diff "sopsdiffer"]

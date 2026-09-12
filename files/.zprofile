@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/joe/.docker/bin"
+# End of Docker Desktop section.
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #SSH_ENV="$HOME/.ssh/agent-environment"
